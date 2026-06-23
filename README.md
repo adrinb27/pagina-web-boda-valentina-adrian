@@ -2,6 +2,9 @@
 A beautiful, feature rich, device friendly wedding website.  
 _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite code `271117` to RSVP._
 
+> **Attribution:** This is a personal customization of the wonderful [wedding-website](https://github.com/rampatra/wedding-website) created by [Ram Patra (@rampatra)](https://github.com/rampatra). Huge thanks to the original author. Customized by Adrian & Valentina for our wedding.
+
+
 # Highlights
 1. Slick and fully __responsive__ design.
 2. __RSVP feature__ which directly uploads data to a Google sheet.
