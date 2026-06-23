@@ -212,15 +212,15 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Un momento!</strong> Estamos guardando tu confirmación.'));
         var validCodes = [
             '01dd565b7c7a7a742792da478fd40e7a', // 990427
             '923c8638360b525238cbaf92508f7092', // 920427
             'ffcb13ec2d56f158fbd744a56de77de9', // 950909
             'cbee0d6d7663efd6e0c99b42fdb4ed41'  // 257515
         ];
-        if (validCodes.indexOf(MD5($('#invite_code').val())) === -1) {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        if (validCodes.indexOf(MD5($('#codigo_invitacion').val())) === -1) {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Lo sentimos!</strong> Tu código de invitación no es correcto.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbwQ4P-hrWpyZpR0KMGjaBs95sG9hu0NOV1ab-4RuDcwnXUg9QmiOOWVjQDLcsa90uCWNw/exec', data)
                 .done(function (data) {
@@ -234,7 +234,7 @@ $(document).ready(function () {
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Lo sentimos!</strong> Hubo un problema con el servidor.'));
                 });
         }
     });

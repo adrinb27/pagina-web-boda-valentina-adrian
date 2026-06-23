@@ -435,8 +435,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h3>What are you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
+                <h3>CONFIRMA TU ASISTENCIA!</h3>
+                <p>Apreciariamos que puedas confirmar antes de 1 de Enero del 2027. Agrega toda la información para que puedas disfrutar lo más posible el evento!</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
@@ -444,14 +444,14 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-envelope"></i><input type="email" name="email" class=""
-                                                                     placeholder="Your email"
+                                                                     placeholder="Tu email"
                                                                      required>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class=""
-                                                                 placeholder="Your name"
+                                <i class="fa fa-user"></i><input name="nombre" class=""
+                                                                 placeholder="Tu nombre completo"
                                                                  required>
                             </div>
                         </div>
@@ -459,18 +459,51 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="4"
-                                                                  placeholder="Husband/Wife or kids"
-                                                                  required>
+                                <i class="fa fa-key"></i><input type="number" name="codigo_invitacion" id="codigo_invitacion"
+                                                                class="" min="0"
+                                                                placeholder="Codigo de invitación (se encuentra en tu invitación)"
+                                                                required>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
+                                <i class="fa fa-music"></i><input name="musica" class=""
+                                                                  placeholder="Una canción que quieran bailar (con Nombre de la canción - Nombre del artista)"
+                                                                  required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-cutlery"></i><input name="restricciones" class=""
+                                                                    placeholder="Restricciónes alimenticias (Si no tienes pon No Aplica)"
+                                                                    required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-spoon"></i><select name="comida" class="" required>
+                                    <option value="" disabled selected>Escoge tu proteina (Carne/Pollo/Vegetariano)</option>
+                                    <option value="Carne">Carne</option>
+                                    <option value="Pollo">Pollo</option>
+                                    <option value="Vegetariano">Vegetariano</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-glass"></i><select name="trago" class="" required>
+                                    <option value="" disabled selected>Tu bebida de preferencia (whisky/aguardiente/Vino Blanco/Vino Tinto/Cerveza/Vodka)</option>
+                                    <option value="Whisky">Whisky</option>
+                                    <option value="Aguardiente">Aguardiente</option>
+                                    <option value="Vino Blanco">Vino Blanco</option>
+                                    <option value="Vino Tinto">Vino Tinto</option>
+                                    <option value="Cerveza">Cerveza</option>
+                                    <option value="Vodka">Vodka</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -478,8 +511,7 @@
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
                     <button class="btn-fill rsvp-btn">
-                        Yes,
-                        that's me!
+                        LISTO PARA LA FIESTA
                     </button>
                 </form>
             </div>

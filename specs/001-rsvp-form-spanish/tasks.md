@@ -29,8 +29,8 @@ Single static-site project. Web files at repo root: `index.html`, `js/scripts.js
 
 **Purpose**: Confirm the toolchain needed to build and verify changes locally.
 
-- [ ] T001 Verify the local toolchain works: run `npx gulp minify-js` (builds `js/scripts.js` → `js/scripts.min.js`) and start a local server (`python3 -m http.server 8000 --bind 127.0.0.1`) serving `index.html` without errors.
-- [ ] T002 [P] Record the current live Apps Script `/exec` endpoint URL and confirm it matches in both `js/scripts.js` (~line 226) and `js/scripts.min.js`.
+- [X] T001 Verify the local toolchain works: run `npx gulp minify-js` (builds `js/scripts.js` → `js/scripts.min.js`) and start a local server (`python3 -m http.server 8000 --bind 127.0.0.1`) serving `index.html` without errors.
+- [X] T002 [P] Record the current live Apps Script `/exec` endpoint URL and confirm it matches in both `js/scripts.js` (~line 226) and `js/scripts.min.js`.
 
 ---
 
@@ -58,9 +58,9 @@ and record correctly under the new field/column names.
 row appears with email, nombre, codigo_invitacion, musica, restricciones, comida, trago in their
 correct columns and no "extras" value.
 
-- [ ] T005 [P] [US1] In `index.html` (#rsvp-form, ~lines 445-478): remove the `extras` number input; add a `musica` text input and a `restricciones` text input; add a `comida` single-select `<select>` with options {Carne, Pollo, Vegetariano}; add a `trago` single-select `<select>` with options {Whisky, Aguardiente, Vino Blanco, Vino Tinto, Cerveza, Vodka}; rename the invite input's `name`/`id` from `invite_code` to `codigo_invitacion`. Keep the existing Bootstrap grid/markup style (Principle I & II).
-- [ ] T006 [P] [US1] In `js/scripts.js` (RSVP block ~line 211): change the invite selector `$('#invite_code')` to `$('#codigo_invitacion')`. Leave the `$.post` flow and MD5 validCodes array unchanged.
-- [ ] T007 [US1] Re-minify with `npx gulp minify-js` so `js/scripts.min.js` reflects T006; verify with `grep -c codigo_invitacion js/scripts.min.js` (page loads the min file). If gulp is unavailable, mirror the edit by hand to keep both files consistent.
+- [X] T005 [P] [US1] In `index.html` (#rsvp-form, ~lines 445-478): remove the `extras` number input; add a `musica` text input and a `restricciones` text input; add a `comida` single-select `<select>` with options {Carne, Pollo, Vegetariano}; add a `trago` single-select `<select>` with options {Whisky, Aguardiente, Vino Blanco, Vino Tinto, Cerveza, Vodka}; rename the invite input's `name`/`id` from `invite_code` to `codigo_invitacion`. Keep the existing Bootstrap grid/markup style (Principle I & II).
+- [X] T006 [P] [US1] In `js/scripts.js` (RSVP block ~line 211): change the invite selector `$('#invite_code')` to `$('#codigo_invitacion')`. Leave the `$.post` flow and MD5 validCodes array unchanged.
+- [X] T007 [US1] Re-minify with `npx gulp minify-js` so `js/scripts.min.js` reflects T006; verify with `grep -c codigo_invitacion js/scripts.min.js` (page loads the min file). If gulp is unavailable, mirror the edit by hand to keep both files consistent.
 - [ ] T008 [US1] Local end-to-end verification: serve the site, submit with a valid code (e.g. 990427) and all fields; confirm success modal shows and one new row records every value in its correct column with no `extras` data (maps to SC-002).
 
 **Checkpoint**: Core RSVP data collection works end to end — this is the shippable MVP.
@@ -75,9 +75,9 @@ alerts) is in Spanish. The success modal is out of scope.
 **Independent Test**: Load the form and confirm every guest-visible string up to submission is in
 Spanish, including the wrong-code error.
 
-- [ ] T009 [US2] In `index.html` translate the confirmation section copy to Spanish per FR-006: heading "CONFIRMA TU ASISTENCIA!", the subheading RSVP-deadline message, placeholders ("Tu email", "Tu nombre completo", "Codigo de invitación (se encuentra en tu invitación)"), the four new field prompts (musica/restricciones/comida/trago labels), and the submit button "LISTO PARA LA FIESTA".
-- [ ] T010 [US2] In `js/scripts.js` translate the inline alert messages to Spanish: the "saving" info alert, the invalid-invite-code error, and the generic server-error in `.fail`. Do not touch the `#rsvp-modal` success popup (out of scope).
-- [ ] T011 [US2] Re-minify (`npx gulp minify-js`) and local-verify: no English text in the form up to submission; submitting a wrong code shows a Spanish error and performs no POST (maps to SC-001, SC-003).
+- [X] T009 [US2] In `index.html` translate the confirmation section copy to Spanish per FR-006: heading "CONFIRMA TU ASISTENCIA!", the subheading RSVP-deadline message, placeholders ("Tu email", "Tu nombre completo", "Codigo de invitación (se encuentra en tu invitación)"), the four new field prompts (musica/restricciones/comida/trago labels), and the submit button "LISTO PARA LA FIESTA".
+- [X] T010 [US2] In `js/scripts.js` translate the inline alert messages to Spanish: the "saving" info alert, the invalid-invite-code error, and the generic server-error in `.fail`. Do not touch the `#rsvp-modal` success popup (out of scope).
+- [X] T011 [US2] Re-minify (`npx gulp minify-js`) and local-verify: no English text in the form up to submission; submitting a wrong code shows a Spanish error and performs no POST (maps to SC-001, SC-003).
 
 **Checkpoint**: Spanish-speaking guests can complete the form with no English up to submission.
 
@@ -101,7 +101,7 @@ server-side guarding of preference values.
 ## Phase 6: Polish & Cross-Cutting Concerns
 
 - [ ] T014 [P] If the handler was redeployed as a new deployment, update the `/exec` URL in both `js/scripts.js` and `js/scripts.min.js` and re-verify one submission.
-- [ ] T015 Consistency + constitution check: diff the RSVP logic in `js/scripts.js` vs `js/scripts.min.js` to confirm they agree; confirm the change is minimal with no design/layout changes (Principles I-III) and that all stories were verified locally (Principle IV).
+- [X] T015 Consistency + constitution check: diff the RSVP logic in `js/scripts.js` vs `js/scripts.min.js` to confirm they agree; confirm the change is minimal with no design/layout changes (Principles I-III) and that all stories were verified locally (Principle IV).
 - [ ] T016 Commit the feature on branch `001-rsvp-form-spanish`; merge to `master` only after local verification passes (Principle V).
 
 ---
