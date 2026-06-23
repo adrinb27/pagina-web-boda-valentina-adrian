@@ -61,7 +61,7 @@ correct columns and no "extras" value.
 - [X] T005 [P] [US1] In `index.html` (#rsvp-form, ~lines 445-478): remove the `extras` number input; add a `musica` text input and a `restricciones` text input; add a `comida` single-select `<select>` with options {Carne, Pollo, Vegetariano}; add a `trago` single-select `<select>` with options {Whisky, Aguardiente, Vino Blanco, Vino Tinto, Cerveza, Vodka}; rename the invite input's `name`/`id` from `invite_code` to `codigo_invitacion`. Keep the existing Bootstrap grid/markup style (Principle I & II).
 - [X] T006 [P] [US1] In `js/scripts.js` (RSVP block ~line 211): change the invite selector `$('#invite_code')` to `$('#codigo_invitacion')`. Leave the `$.post` flow and MD5 validCodes array unchanged.
 - [X] T007 [US1] Re-minify with `npx gulp minify-js` so `js/scripts.min.js` reflects T006; verify with `grep -c codigo_invitacion js/scripts.min.js` (page loads the min file). If gulp is unavailable, mirror the edit by hand to keep both files consistent.
-- [ ] T008 [US1] Local end-to-end verification: serve the site, submit with a valid code (e.g. 990427) and all fields; confirm success modal shows and one new row records every value in its correct column with no `extras` data (maps to SC-002).
+- [x] T008 [US1] Local end-to-end verification: serve the site, submit with a valid code (e.g. 990427) and all fields; confirm success modal shows and one new row records every value in its correct column with no `extras` data (maps to SC-002).
 
 **Checkpoint**: Core RSVP data collection works end to end — this is the shippable MVP.
 
@@ -91,8 +91,8 @@ server-side guarding of preference values.
 **Independent Test**: Submit RSVPs and confirm (a) the sheet header has the new names with no leftover
 `extras` data column and (b) an email alert lists every submitted field.
 
-- [ ] T012 [US3] Verify the email alert and column mapping: submit with each invite code {990427, 920427, 950909, 257515}; confirm exactly one row per submission and one email listing all seven fields (maps to SC-004).
-- [ ] T013 [US3] Verify server-side validation (FR-014) via direct curl proxy POSTs from `specs/001-rsvp-form-spanish/quickstart.md`: out-of-set `comida` (e.g. "Pescado") and out-of-set `trago` (e.g. "Tequila") each return `{"result":"error"}` and write no row (maps to SC-005).
+- [x] T012 [US3] Verify the email alert and column mapping: submit with each invite code {990427, 920427, 950909, 257515}; confirm exactly one row per submission and one email listing all seven fields (maps to SC-004).
+- [x] T013 [US3] Verify server-side validation (FR-014) via direct curl proxy POSTs from `specs/001-rsvp-form-spanish/quickstart.md`: out-of-set `comida` (e.g. "Pescado") and out-of-set `trago` (e.g. "Tequila") each return `{"result":"error"}` and write no row (maps to SC-005).
 
 **Checkpoint**: Couple-facing outputs are correct and inputs are guarded server-side.
 
@@ -100,7 +100,7 @@ server-side guarding of preference values.
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T014 [P] If the handler was redeployed as a new deployment, update the `/exec` URL in both `js/scripts.js` and `js/scripts.min.js` and re-verify one submission.
+- [x] T014 [P] If the handler was redeployed as a new deployment, update the `/exec` URL in both `js/scripts.js` and `js/scripts.min.js` and re-verify one submission.
 - [X] T015 Consistency + constitution check: diff the RSVP logic in `js/scripts.js` vs `js/scripts.min.js` to confirm they agree; confirm the change is minimal with no design/layout changes (Principles I-III) and that all stories were verified locally (Principle IV).
 - [ ] T016 Commit the feature on branch `001-rsvp-form-spanish`; merge to `master` only after local verification passes (Principle V).
 

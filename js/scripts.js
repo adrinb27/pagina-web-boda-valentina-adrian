@@ -222,7 +222,7 @@ $(document).ready(function () {
         if (validCodes.indexOf(MD5($('#codigo_invitacion').val())) === -1) {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Lo sentimos!</strong> Tu código de invitación no es correcto.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbwQ4P-hrWpyZpR0KMGjaBs95sG9hu0NOV1ab-4RuDcwnXUg9QmiOOWVjQDLcsa90uCWNw/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbzc6VDDRYmpUxELVh2MF07CbakkEeA3RNmU02HMzSZbMXjiZEHdBCjF_xw8gOAw2w7U9w/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
