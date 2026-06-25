@@ -36,3 +36,9 @@ typings/
 .env
 .sass-cache/
 *.css.map
+
+# Windows mark-of-the-web metadata (WSL surfaces these as separate files)
+*:Zone.Identifier
+
+# Large source video (only the trimmed video/bogota-bg.mp4 is used on the site)
+/bogota.mp4

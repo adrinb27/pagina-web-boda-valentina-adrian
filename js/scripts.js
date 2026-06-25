@@ -161,10 +161,6 @@ $(document).ready(function () {
         share_bar[i].style.display = 'inline-block';
     }
 
-    /********************** Embed youtube video *********************/
-    $('.player').YTPlayer();
-
-
     /********************** Toggle Map Content **********************/
     $('#btn-show-map').click(function () {
         $('#map-content').toggleClass('toggle-map-content');

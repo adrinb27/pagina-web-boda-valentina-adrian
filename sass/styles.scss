@@ -727,12 +727,26 @@ Embed video
 ========================================================================== */
 #video-bg {
   height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+.video-bg-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  pointer-events: none;
+  z-index: 0;
 }
 #video-content {
   width: 100%;
   height: 100%;
   padding-top: 100px;
   position: relative;
+  z-index: 1;
   background: rgba(17, 17, 17, 0.5);
   text-align: center;
 }
