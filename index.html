@@ -256,6 +256,54 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+    <div id="rec-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">Recomendaciones</h3>
+                    <h5>Alojamientos</h5>
+                    <p>
+                        Aquí encontrarás algunas opciones de hospedaje cercanas al lugar de la
+                        celebración. Te recomendamos reservar con anticipación para asegurar
+                        disponibilidad. Más adelante actualizaremos esta sección con tarifas y
+                        códigos de descuento.
+                        <br>
+                        <a href="https://example.com/alojamientos-hotel" target="_blank" rel="noopener">Hotel sugerido</a>
+                        &middot;
+                        <a href="https://example.com/alojamientos-apartamentos" target="_blank" rel="noopener">Apartamentos</a>
+                    </p>
+                    <h5>Transporte</h5>
+                    <p>
+                        Aquí tienes información sobre cómo moverte por la ciudad: aplicaciones de
+                        transporte, taxis y rutas hacia el evento. Coordinaremos opciones compartidas
+                        para quienes vengan de fuera de la ciudad.
+                        <br>
+                        <a href="https://example.com/transporte-app" target="_blank" rel="noopener">App de transporte</a>
+                    </p>
+                    <h5>Restaurantes/Turismo</h5>
+                    <p>
+                        Algunos de nuestros restaurantes y lugares turísticos favoritos para que
+                        disfrutes tu estadía. Hay opciones para todos los gustos y presupuestos.
+                        <br>
+                        <a href="https://example.com/restaurantes" target="_blank" rel="noopener">Restaurantes</a>
+                        &middot;
+                        <a href="https://example.com/turismo" target="_blank" rel="noopener">Sitios turísticos</a>
+                    </p>
+                    <h5>Fuera de Bogotá</h5>
+                    <p>
+                        Si quieres aprovechar el viaje, te dejamos recomendaciones de destinos
+                        cercanos para visitar fuera de Bogotá. Pueblos, naturaleza y experiencias a
+                        pocas horas de la ciudad.
+                        <br>
+                        <a href="https://example.com/fuera-de-bogota" target="_blank" rel="noopener">Destinos cercanos</a>
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 </section>
 
 <section id="instagram" class="section-padding">
@@ -373,8 +421,8 @@
 
 <section id="map" class="section-padding">
     <div class="text-center">
-        <h3>How do I get there?</h3>
-        <p>It's way easier than you think!</p>
+        <h3>Como llego al lugar?</h3>
+        <p>Hay muchas maneras!</p>
     </div>
     <div id="map-canvas"></div>
     <div id="map-content-wrapper" class="container pointer-events-none">
@@ -388,24 +436,27 @@
                 <div id="map-content" class="pointer-events-auto">
                     <div class="row">
                         <div class="col-md-6">
-                            <h5>ITC Fortune Park</h5>
-                            <p>Kona Expressway, Howrah, West Bengal 711403, India</p>
+                            <h5>Compañía Casa de Rey</h5>
+                            <p>Cra. 7 #22-9, Santa Fé, Bogotá, Colombia</p>
                         </div>
                         <div class="col-md-6">
-                            <h5>Mr. Amit Roy</h5>
-                            <p><i class="fa fa-mobile"></i> <a href="tel://+919412345678">+91 9412345678</a><br>
-                                <i class="fa fa-mobile"></i> <a href="tel://+917123456789">+91 7123456789</a></p>
+                            <h5>Nubia Rivera</h5>
+                            <p><i class="fa fa-mobile"></i> <a href="tel://+919412345678">+57 312 5239222</a></p>
                         </div>
                     </div>
                     <div class="row text-center">
                         <div class="col-md-6" style="padding: 5px;">
                             <a class="btn btn-fill btn-small"
                                href="https://m.uber.com/ul/?action=setPickup&client_id=Yh7Dl6SjB56RY2JuuZF8ttVa6ryFV78W&pickup=my_location&dropoff[formatted_address]=Fortune%20Park%20Panchwati%20-%20Hotels%20in%20Kolkata%2C%20Howrah%2C%20West%20Bengal%2C%20India&dropoff[latitude]=22.593276&dropoff[longitude]=88.270277"><i
-                                    class="fa fa-taxi"></i>&nbsp;&nbsp;Book Uber</a>
+                                    class="fa fa-taxi"></i>&nbsp;&nbsp; Uber</a>
                         </div>
                         <div class="col-md-6" style="padding: 5px;">
-                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
-                                map</a>
+                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Ver Mapa</a>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-12 text-center" style="padding: 5px;">
+                            <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#rec-modal"><i class="fa fa-map-signs"></i>&nbsp;&nbsp;Recomendaciones</a>
                         </div>
                     </div>
                 </div>
@@ -461,7 +512,7 @@
                             <div class="form-input-group">
                                 <i class="fa fa-key"></i><input type="number" name="codigo_invitacion" id="codigo_invitacion"
                                                                 class="" min="0"
-                                                                placeholder="Codigo de invitación (se encuentra en tu invitación)"
+                                                                placeholder="Codigo de invitación(mira la invitación)"
                                                                 required>
                             </div>
                         </div>
@@ -477,7 +528,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-cutlery"></i><input name="restricciones" class=""
-                                                                    placeholder="Restricciónes alimenticias(Si no tienes pon No Aplica)"
+                                                                    placeholder="Restricciónes alimenticias"
                                                                     required>
                             </div>
                         </div>
