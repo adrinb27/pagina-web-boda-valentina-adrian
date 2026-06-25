@@ -24,9 +24,9 @@ Reference anchors in `index.html` (current line numbers, may shift after edits):
 
 ## Phase 1: Setup (prerequisites)
 
-- [ ] T001 Confirm working tree baseline: run `git --no-pager diff --stat` from repo root and
+- [X] T001 Confirm working tree baseline: run `git --no-pager diff --stat` from repo root and
   note pre-existing churn so you can later confirm only `index.html` changed by this feature.
-- [ ] T002 Re-read the reference patterns in `index.html`: the Dress code trigger row
+- [X] T002 Re-read the reference patterns in `index.html`: the Dress code trigger row
   (lines 202-208), `#dc-modal` markup (lines 215-257), and the "Book Uber | Show map" row
   inside `#map-content` (lines 400-410) to copy class names and structure exactly.
 
@@ -51,7 +51,7 @@ confirm the modal opens with all 4 sections + links, links open in a new tab, mo
 
 ### Implementation (author with a UTF-8-safe Python patch script per research.md D6)
 
-- [ ] T003 [US1] Add the new "Recomendaciones" trigger row in `index.html` inside
+- [X] T003 [US1] Add the new "Recomendaciones" trigger row in `index.html` inside
   `#map-content`, directly AFTER the "Book Uber | Show map" row (after line 410, before the
   `#map-content` closing `</div>`). Mirror the Dress code trigger: a `<div class="row
   section-padding">` (or `row text-center` to match the pane) containing a single
@@ -59,19 +59,19 @@ confirm the modal opens with all 4 sections + links, links open in a new tab, mo
   `<a class="btn btn-accent btn-small" data-toggle="modal" data-target="#rec-modal">`
   and a Font Awesome 4 icon `<i class="fa fa-map-signs"></i>&nbsp;&nbsp;Recomendaciones</a>`.
   Leave the existing two-button row UNCHANGED. (FR-001, FR-002, FR-003)
-- [ ] T004 [US1] Add the `#rec-modal` block in `index.html` immediately AFTER `#dc-modal`
+- [X] T004 [US1] Add the `#rec-modal` block in `index.html` immediately AFTER `#dc-modal`
   (after line 257). Mirror `#dc-modal` exactly: `<div id="rec-modal" class="modal fade"
   tabindex="-1" role="dialog">` > `modal-dialog` > `modal-content` > `modal-body` with the
   same close button (`<button class="close" data-dismiss="modal" ...>`) and a centered
   `<h3 class="text-center section-padding">Recomendaciones</h3>`. (FR-003, FR-004)
-- [ ] T005 [US1] Inside `#rec-modal`, add exactly four `<h5>` sections in order -
+- [X] T005 [US1] Inside `#rec-modal`, add exactly four `<h5>` sections in order -
   Alojamientos, Transporte, Restaurantes/Turismo, Fuera de Bogota - each followed by one or
   two `<p>` of placeholder Spanish copy (a few sentences). Author all accented characters
   UTF-8-safe. (FR-005, FR-006, FR-008, SC-003)
-- [ ] T006 [US1] Embed 1-2 example hyperlinks within each of the four sections using obvious
+- [X] T006 [US1] Embed 1-2 example hyperlinks within each of the four sections using obvious
   placeholder URLs (e.g. `https://example.com/...`), each with `target="_blank"
   rel="noopener"`. Confirm every recommendation link carries BOTH attributes. (FR-007, SC-002)
-- [ ] T007 [US1] Verify the edit introduced NO new JavaScript and did NOT modify `js/scripts.js`,
+- [X] T007 [US1] Verify the edit introduced NO new JavaScript and did NOT modify `js/scripts.js`,
   `js/scripts.min.js`, the map, or any other section - only the two new `index.html` blocks.
   (FR-009, SC-005, Constitution I)
 
@@ -83,29 +83,29 @@ confirm the modal opens with all 4 sections + links, links open in a new tab, mo
 
 > Replaces an automated test phase. Run from repo root: `~/repos/boda/wedding-website`.
 
-- [ ] T008 (Conditional - SCSS only) If and ONLY if `sass/styles.scss` was changed, recompile
+- [X] T008 (Conditional - SCSS only) If and ONLY if `sass/styles.scss` was changed, recompile
   via `npx gulp sass` -> `css/styles.min.css`. Expected: NO SCSS change, so SKIP. (research.md D7)
-- [ ] T009 (Conditional - JS only) If any JS was touched (it should NOT be), re-minify via
+- [X] T009 (Conditional - JS only) If any JS was touched (it should NOT be), re-minify via
   `npx gulp minify-js`. Expected: NO JS change, so SKIP. (research.md D1)
-- [ ] T010 Serve locally: `python3 -m http.server 8000 --bind 127.0.0.1`, open
+- [X] T010 Serve locally: `python3 -m http.server 8000 --bind 127.0.0.1`, open
   http://127.0.0.1:8000/, scroll to `#map`, click "Show info" to reveal `#map-content`.
-- [ ] T011 Verify placement/styling: the "Book Uber | Show map" row is UNCHANGED and a new
+- [X] T011 Verify placement/styling: the "Book Uber | Show map" row is UNCHANGED and a new
   centered "Recomendaciones" button appears in its own row directly below, using
   `btn btn-accent btn-small` with the Font Awesome icon. (FR-001, FR-002, SC-001)
-- [ ] T012 Click "Recomendaciones": the modal opens with the centered title "Recomendaciones"
+- [X] T012 Click "Recomendaciones": the modal opens with the centered title "Recomendaciones"
   and exactly four sections in order (Alojamientos, Transporte, Restaurantes/Turismo, Fuera de
   Bogota), each with Spanish copy and at least one example link. (FR-003..FR-007, SC-002, SC-003)
-- [ ] T013 [P] Click an example link: it opens the placeholder URL in a NEW browser tab while
+- [X] T013 [P] Click an example link: it opens the placeholder URL in a NEW browser tab while
   the wedding page stays open; spot-check the rendered HTML shows `target="_blank" rel="noopener"`
   on each recommendation link. (FR-007)
-- [ ] T014 [P] Close the modal via the X control and by clicking the dark backdrop; both return
+- [X] T014 [P] Close the modal via the X control and by clicking the dark backdrop; both return
   to the page unchanged. (Acceptance scenario 4)
-- [ ] T015 [P] Regression: open the existing Dress code modal and the RSVP modal - both still
+- [X] T015 [P] Regression: open the existing Dress code modal and the RSVP modal - both still
   work and only one modal is open at a time. (Edge case "Multiple modals", SC-004)
-- [ ] T016 [P] Responsive check: narrow the browser to mobile width - the new button stays
+- [X] T016 [P] Responsive check: narrow the browser to mobile width - the new button stays
   tappable and the modal is readable without horizontal scrolling, like Dress code. (SC-004)
-- [ ] T017 [P] Visual regression: confirm no other section shifted or restyled. (Constitution I, SC-004)
-- [ ] T018 Encoding check: confirm accents render correctly (no mojibake) in the browser, then
+- [X] T017 [P] Visual regression: confirm no other section shifted or restyled. (Constitution I, SC-004)
+- [X] T018 Encoding check: confirm accents render correctly (no mojibake) in the browser, then
   run `git --no-pager diff --stat` (expect only `index.html`; plus `css/styles.min.css` only if
   SCSS changed) and `file index.html` (expect UTF-8/ASCII). If accents are broken, re-apply with
   a UTF-8-safe method - do NOT byte-level shell-edit. (research.md D6, FR-008)
