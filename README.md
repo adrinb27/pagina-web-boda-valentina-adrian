@@ -24,6 +24,30 @@ _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite
 4. `$ gulp` - compile sass to css, minify js, etc.
 5. That's it, open `index.html` file on your browser by just double-clicking on it.
 
+
+# Run with Docker
+You can build and serve the site in a container instead of installing Node locally.
+The build stage compiles the assets (`gulp`) and the runtime stage serves them with nginx.
+
+### Using docker compose (recommended)
+1. `cp .env.example .env` - optional, lets you change the ports
+2. `docker compose up --build` - build the image and start the site
+3. Open `http://localhost:8080` in your browser
+
+Change the port without editing any file:
+```
+HOST_PORT=9000 PORT=9000 docker compose up --build
+```
+- `HOST_PORT` - the port on your machine (what you browse to)
+- `PORT` - the port nginx listens on inside the container
+
+### Using plain docker
+```
+docker build -t wedding-website .
+docker run -p 8080:8080 -e PORT=8080 wedding-website
+```
+
+
 # Documentation
 I have written a 
 [blog post describing all the features of this wedding website](https://blog.rampatra.com/wedding-website) and how to

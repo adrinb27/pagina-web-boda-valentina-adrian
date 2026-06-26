@@ -1,0 +1,25 @@
+server {
+    listen      ${PORT};
+    listen      [::]:${PORT};
+    server_name _;
+
+    root  /usr/share/nginx/html;
+    index index.html;
+
+    # Single-page friendly: fall back to index.html
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Cache static assets aggressively
+    location ~* \.(?:css|js|jpe?g|png|gif|ico|svg|woff2?|ttf|eot|mp4|webm)$ {
+        expires    7d;
+        add_header Cache-Control "public";
+        access_log off;
+    }
+
+    # Gzip text assets
+    gzip            on;
+    gzip_types      text/css application/javascript image/svg+xml application/json;
+    gzip_min_length 1024;
+}
