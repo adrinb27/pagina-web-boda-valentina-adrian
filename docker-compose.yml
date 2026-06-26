@@ -3,12 +3,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: wedding-website
-    container_name: wedding-website
+    image: pagina-boda-valadri
+    container_name: pagina-boda-valadri
     # HOST_PORT = port on your machine, PORT = port inside the container.
     # Both default to 8080 and can be overridden via the environment or a .env file.
     ports:
-      - "${HOST_PORT:-8080}:${PORT:-8080}"
+      - "8087"
     environment:
-      - PORT=${PORT:-8080}
-    restart: unless-stopped
+      - PORT=8087
+    restart: always
