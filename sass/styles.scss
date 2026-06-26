@@ -293,7 +293,7 @@ Hero
 }
 .fixed {
   position: fixed;
-  background-color: rgba(55, 36, 40, .88);
+  background-color: rgba(104, 157, 147, .88);
   z-index: 999;
   width: 100%;
 }
@@ -375,9 +375,6 @@ header {
 /* ==========================================================================
 Social share buttons
 ========================================================================== */
-.share-bar {
-  margin-top: 20px;
-}
 
 /* ==========================================================================
 Intro
@@ -766,6 +763,12 @@ Google map
 #map-canvas {
   height: 500px;
   width: 100%;
+}
+#map-canvas iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 #map-content-wrapper {
   position: relative;
