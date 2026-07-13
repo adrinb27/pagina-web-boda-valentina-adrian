@@ -1,3 +1,76 @@
+/**
+ * i18n language toggle: Spanish is the default (authored in index.html) and the
+ * fallback. English overrides live in EN_DICT below, keyed by the elements'
+ * data-i18n (text), data-i18n-html (inner HTML) and data-i18n-ph (placeholder)
+ * attributes. Missing keys fall back to the cached Spanish. No persistence:
+ * every load starts in Spanish. The RSVP form's name/value contract is untouched.
+ */
+var EN_DICT = {
+    "nav.intro": "Purpose",
+    "nav.wedding": "The Wedding",
+    "nav.instagram": "Share the memories",
+    "nav.network": "Our Network",
+    "nav.bogota": "Discover Bogota",
+    "nav.place": "Venue",
+    "inv.title": "We're Getting Married!",
+    "inv.body": "The date is June 26th, 2027. Join us and be part of it!",
+    "intro.header": "Purpose",
+    "intro.body": "Convinced that the network of affection is the only thing that sustains and drives us, we want to celebrate with all of you the joy of finding one another and coming together. It will be a time to look into each other's eyes, laugh and dance. A rite that will nourish the seeds of our shared project — one we build every day as a couple and that grows stronger with the love of you all, our families and friends. See you soon, Valentina and Adrián",
+    "events.header": "For the Day of the Event",
+    "events.date": "June 26th",
+    "events.wedding": "The Wedding",
+    "events.body": "It will be a civil marriage. A small ceremony, followed by dinner and a great night of dancing.",
+    "events.important": "Important",
+    "dc.title": "Get dressed up (Time to shine!)",
+    "dc.dress.h": "Dress code suggestion",
+    "dc.dress.p": "For those who like to play with their creativity and setting, the dress code is just the formality of a ceremonial rite. For those who prefer a direct message: the suggestion is \"evening cocktail\" attire. There is no restriction on color or fabric.",
+    "dc.dance.h": "Let's dance!",
+    "dc.dance.p": "Colombian culture is famous for its dancing. Our celebration echoes that tradition and includes a big party. We don't expect you to dance as well as the Rivera family, but in case you'd like to practice a few steps, check out these videos of <a href=\"https://www.youtube.com/watch?v=tE18rzWcnBE\">salsa</a> and <a href=\"https://www.youtube.com/watch?v=A9YyCsxVXeA\">merengue</a>.",
+    "dc.intl.h": "An international network",
+    "dc.intl.p": "For those who don't speak Spanish, here's a video with some <a href=\"https://youtu.be/hyLl_0d0EBw\">words and phrases</a>, and the same for those who don't know <a href=\"https://youtu.be/Z6GGAQOMX8c\">English</a>. That way you'll meet many people from all over the world and better understand why we love you all so much.",
+    "dc.fiebre.h": "Yellow Fever",
+    "dc.fiebre.p": "If you are travelling to Colombia from abroad, you may need the <strong>yellow fever</strong> vaccine. Some regions of the country require it, and certain countries ask for the vaccination certificate on your return. The vaccine must be given <strong>at least 10 days before</strong> travelling to be valid. We recommend checking the current restrictions and requirements with your doctor and the health authorities before flying. You can find more information <a href=\"https://www.cancilleria.gov.co/tramites_servicios/apostilla_legalizacion/requisitos-ingreso-salida-pais\" target=\"_blank\" rel=\"noopener\">here</a>.",
+    "rec.title": "Recommendations",
+    "rec.aloj.h": "Lodging",
+    "rec.aloj.p": "Here are some lodging options near the celebration venue. We recommend booking in advance to secure availability.<br><a href=\"https://maps.app.goo.gl/huzhYvEQ9vQMxksN8\" target=\"_blank\" rel=\"noopener\">Suggested hotel</a> &middot; <a href=\"https://www.airbnb.com/wishlists/1629781079\" target=\"_blank\" rel=\"noopener\">Apartments</a>",
+    "rec.trans.h": "Transportation",
+    "rec.trans.p": "To reach Bogota by air, fly into El Dorado Airport. Around the city you can use the following ride-hailing apps.<br><a href=\"https://www.uber.com/\" target=\"_blank\" rel=\"noopener\">Ride-hailing app</a>",
+    "rec.rest.h": "Restaurants/Tourism",
+    "rec.rest.p": "Some of our favorite restaurants and iconic spots so you can enjoy your stay beyond the celebration. There are options for every taste and budget.<br><a href=\"https://maps.app.goo.gl/iyppq3msP4KYpF54A\" target=\"_blank\" rel=\"noopener\">This is a lovely list full of restaurants and tourist spots.</a> &middot;",
+    "rec.fuera.h": "Outside Bogota",
+    "rec.fuera.p": "If you'd like to make the most of your trip, here are some recommendations for destinations outside Bogota. Towns, nature and experiences just a few hours from the city.<br><a href=\"https://maps.app.goo.gl/ZxDHNXU4kiuN9wQ39\" target=\"_blank\" rel=\"noopener\">Nearby destinations</a>",
+    "ig.h": "A picture is worth a thousand words!",
+    "ig.p": "Help us keep our memories! <a href=\"https://immichnova.ddns.net/share/b9PmJl9elZiUcAgdE9alq-BOV1BYUbrjJqjNW_QOh7bN-vl6JgPJkIVdE3pyn0-_QA8\" target=\"_blank\">Upload them or view them on our server!</a>",
+    "footer.p": "Made by Adrián with lots of <span class=\"fa fa-heart pulse2\"></span> for Valentina and all our guests. Illustrations by Laura Camila Suarez Rodríguez",
+    "network.h": "Our Network!",
+    "video.p": "The World Theatre Capital",
+    "map.h": "How do I get to the venue?",
+    "map.p": "There are many ways!",
+    "map.soon": "Coming soon",
+    "map.confirm": "We'll confirm the venue",
+    "map.contact": "Contact",
+    "map.viewmap": "View Map",
+    "map.rec": "Recommendations",
+    "rsvpm.h": "Thank You So Much",
+    "rsvpm.p": "We're so excited that you'll be joining us.",
+    "rsvp.h": "CONFIRM YOUR ATTENDANCE",
+    "rsvp.p": "We'd appreciate it if you could confirm before December 1st, 2026. Add all the details so you can enjoy the event to the fullest!",
+    "rsvp.ph.email": "Your email",
+    "rsvp.ph.nombre": "Your full name",
+    "rsvp.ph.codigo": "Invitation code (see your invitation)",
+    "rsvp.ph.musica": "A song you'd like to dance to",
+    "rsvp.ph.restr": "Dietary restrictions",
+    "rsvp.comida.prompt": "Choose your protein",
+    "rsvp.comida.carne": "Beef",
+    "rsvp.comida.pollo": "Chicken",
+    "rsvp.comida.veg": "Vegetarian",
+    "rsvp.trago.prompt": "Your drink of choice",
+    "rsvp.trago.vblanco": "White Wine",
+    "rsvp.trago.vtinto": "Red Wine",
+    "rsvp.trago.cerveza": "Beer",
+    "rsvp.submit": "READY TO PARTY"
+};
+
 $(document).ready(function () {
 
     /***************** Waypoints ******************/
@@ -148,35 +221,43 @@ $(document).ready(function () {
     });
 
     /********************** Add to Calendar **********************/
-    var myCalendar = createCalendar({
-        options: {
-            class: '',
-            // You can pass an ID. If you don't, one will be generated for you
-            id: ''
-        },
-        data: {
-            // Event title
+    // Localized add-to-calendar content. Spanish is the default/fallback; the calendar
+    // is rebuilt on language toggle so the button label, event title and description
+    // match the active language. Date/time and address (proper noun) never change.
+    var CAL_I18N = {
+        es: {
+            label: "Agrégalo a tu calendario",
             title: "Boda de Valentina y Adrián",
-
-            // Event start date
-            start: new Date('Jun 26, 2027 17:00'),
-
-            // Event duration (IN MINUTES)
-            // duration: 120,
-
-            // You can also choose to set an end time
-            // If an end time is set, this will take precedence over duration
-            end: new Date('Jun 27, 2027 03:00'),
-
-            // Event Address
-            address: "Cra. 7 #22-9, Santa Fé, Bogotá, Colombia",
-
-            // Event Description
             description: "Nos emociona muchisimo poder verte en el evento! Si tienes alguna duda contactanos!"
+        },
+        en: {
+            label: "Add it to your calendar",
+            title: "Valentina and Adrián's Wedding",
+            description: "We're so excited to see you at the event! If you have any questions, contact us!"
         }
-    });
+    };
 
-    $('#add-to-cal').html(myCalendar);
+    function renderCalendar(lang) {
+        var c = CAL_I18N[lang] || CAL_I18N.es;
+        var myCalendar = createCalendar({
+            options: {
+                class: '',
+                id: ''
+            },
+            data: {
+                title: c.title,
+                start: new Date('Jun 26, 2027 17:00'),
+                end: new Date('Jun 27, 2027 03:00'),
+                address: "Cra. 7 #22-9, Santa Fé, Bogotá, Colombia",
+                description: c.description
+            }
+        });
+        $('#add-to-cal').html(myCalendar);
+        // ouical hardcodes the Spanish label; override it with the active language.
+        $('#add-to-calendar-label').html('<i class="fa fa-calendar"></i>&nbsp;&nbsp; ' + c.label);
+    }
+
+    renderCalendar('es');
 
 
     /********************** RSVP **********************/
@@ -210,6 +291,34 @@ $(document).ready(function () {
                 });
         }
     });
+
+    /********************** Language toggle (ES default / EN) **********************/
+    function applyLanguage(lang) {
+        $('[data-i18n]').each(function () {
+            var $el = $(this);
+            if ($el.data('i18nEs') === undefined) { $el.data('i18nEs', $el.text()); }
+            var k = $el.attr('data-i18n');
+            $el.text(lang === 'en' && EN_DICT[k] ? EN_DICT[k] : $el.data('i18nEs'));
+        });
+        $('[data-i18n-html]').each(function () {
+            var $el = $(this);
+            if ($el.data('i18nHtmlEs') === undefined) { $el.data('i18nHtmlEs', $el.html()); }
+            var k = $el.attr('data-i18n-html');
+            $el.html(lang === 'en' && EN_DICT[k] ? EN_DICT[k] : $el.data('i18nHtmlEs'));
+        });
+        $('[data-i18n-ph]').each(function () {
+            var $el = $(this);
+            if ($el.data('i18nPhEs') === undefined) { $el.data('i18nPhEs', $el.attr('placeholder')); }
+            var k = $el.attr('data-i18n-ph');
+            $el.attr('placeholder', lang === 'en' && EN_DICT[k] ? EN_DICT[k] : $el.data('i18nPhEs'));
+        });
+        renderCalendar(lang);
+        document.documentElement.lang = lang;
+        $('.lang-es').toggleClass('active', lang === 'es');
+        $('.lang-en').toggleClass('active', lang === 'en');
+    }
+    $(document).on('click', '.lang-es', function (e) { e.preventDefault(); applyLanguage('es'); });
+    $(document).on('click', '.lang-en', function (e) { e.preventDefault(); applyLanguage('en'); });
 
 });
 

@@ -318,7 +318,7 @@ header {
     display: inline-block;
   }
   .logo img {
-    height: 19px;
+    height: 40px;
   }
   ul.primary-nav {
     margin: 0 0 0 75px;
@@ -351,6 +351,25 @@ header {
           color: $accent-color;
         }
       }
+    }
+  }
+  .lang-switch {
+    a.lang-es,
+    a.lang-en {
+      color: $txt-light;
+      padding: 0 6px;
+      text-decoration: none;
+      &:hover {
+        color: $accent-color;
+      }
+      &.active {
+        color: $accent-color;
+        font-weight: bold;
+      }
+    }
+    .lang-sep {
+      color: $txt-light;
+      opacity: 0.6;
     }
   }
   .header-nav {
