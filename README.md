@@ -1,45 +1,78 @@
-# Wedding Website
-A beautiful, feature rich, device friendly wedding website.  
-_See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite code `271117` to RSVP._
+# Boda de Valentina & Adrián 💍
 
-> **Attribution:** This is a personal customization of the wonderful [wedding-website](https://github.com/rampatra/wedding-website) created by [Ram Patra (@rampatra)](https://github.com/rampatra). Huge thanks to the original author. Customized by Adrian & Valentina for our wedding.
+Nuestro sitio web de boda — Bogotá, Colombia · 26 de Junio de 2027.
 
+A bilingual (Español / English) wedding website with online RSVP, an
+add-to-calendar button, our story in pictures, travel and health tips for
+guests coming to Colombia, and a map to the venue.
 
-# Highlights
-1. Slick and fully __responsive__ design.
-2. __RSVP feature__ which directly uploads data to a Google sheet.
-3. __Receive email alerts__ when someone RSVPs.
-4. __Add to Calendar__ feature which supports four different calendars.
-5. __Book Uber__ button lets guests book a cab to the venue with just a single tap.
-6. A nice __Youtube video__ showing your venue.
-7. __Google Map__ showing your venue's location.
-8. Start and run the website __completely free__. No hosting, backend server, or database required as you can use
-   [GitHub Pages](https://pages.github.com/) to host and Google sheets (with the help of Google scripts) to store RSVP
-   data.
+> **Gracias / Thank you.** This website is a personal customization of the
+> wonderful open-source [wedding-website](https://github.com/rampatra/wedding-website)
+> created by [Ram Patra (@rampatra)](https://github.com/rampatra). His project
+> gave us a beautiful, thoughtfully engineered starting point, and we're deeply
+> grateful for his generosity in open-sourcing it. Muchísimas gracias, Ram! 🙏
 
-# Getting Started
-1. `$ git clone https://github.com/rampatra/wedding-website.git` - clone this project to your computer
-2. `$ cd wedding-website` - go inside the project directory
-3. `$ npm install` - install dependencies
-4. `$ gulp` - compile sass to css, minify js, etc.
-5. That's it, open `index.html` file on your browser by just double-clicking on it.
+---
 
+## What we customized
 
-# Run with Docker
-You can build and serve the site in a container instead of installing Node locally.
-The build stage compiles the assets (`gulp`) and the runtime stage serves them with nginx.
+Building on Ram's original template, we adapted the site for our wedding:
+
+1. **Bilingual site (Español / English).** Spanish is the default; a small
+   **ES / EN** switch in the navigation bar toggles the whole page in place.
+   The RSVP submission always stores its data in a single, consistent format
+   regardless of the language shown.
+2. **Localized add-to-calendar.** The "Agrégalo a tu calendario" button and the
+   event it creates (title and description) are translated along with the page.
+3. **Our own branding.** New couple logo in the navigation bar and a matching,
+   freshly generated favicon / touch-icon set.
+4. **Our story & photos.** Custom illustrations and photographs throughout the
+   hero, intro, and gallery sections.
+5. **Guest information for Colombia.** A recommendations modal with our favorite
+   spots, plus an *"Importante"* section covering travel details — including a
+   note about the **yellow fever (fiebre amarilla)** vaccine so guests can check
+   requirements before flying.
+6. **RSVP via Google Sheets.** Guests RSVP with an invite code; entries are
+   written straight to a Google Sheet through a Google Apps Script — no backend
+   server or database required.
+7. **Custom Google Map** pointing to our venue.
+8. **Docker setup** for building and serving the static site in a container.
+
+---
+
+## Getting started (local build)
+
+The site is static — Sass is compiled to CSS and the JavaScript is minified
+with Gulp.
+
+1. `git clone https://github.com/adrinb27/pagina-web-boda-valentina-adrian.git`
+2. `cd pagina-web-boda-valentina-adrian`
+3. `npm install` — install dependencies
+4. `npx gulp` — compile Sass → CSS and minify JS
+5. Open `index.html` in your browser (or serve the folder, e.g.
+   `python3 -m http.server 8000`).
+
+> **Note:** The page loads the *minified* assets, so re-run `npx gulp` after
+> editing any `.scss` or `.js` file. `npx gulp sass` rebuilds CSS only and
+> `npx gulp minify-js` rebuilds JS only.
+
+## Run with Docker
+
+Build and serve the site in a container instead of installing Node locally. The
+build stage compiles the assets with Gulp and the runtime stage serves them with
+nginx.
 
 ### Using docker compose (recommended)
-1. `cp .env.example .env` - optional, lets you change the ports
-2. `docker compose up --build` - build the image and start the site
-3. Open `http://localhost:8080` in your browser
+1. `cp .env.example .env` — optional, lets you change the ports
+2. `docker compose up --build` — build the image and start the site
+3. Open `http://localhost:8080`
 
 Change the port without editing any file:
 ```
 HOST_PORT=9000 PORT=9000 docker compose up --build
 ```
-- `HOST_PORT` - the port on your machine (what you browse to)
-- `PORT` - the port nginx listens on inside the container
+- `HOST_PORT` — the port on your machine (what you browse to)
+- `PORT` — the port nginx listens on inside the container
 
 ### Using plain docker
 ```
@@ -47,42 +80,25 @@ docker build -t wedding-website .
 docker run -p 8080:8080 -e PORT=8080 wedding-website
 ```
 
+---
 
-# Documentation
-I have written a 
-[blog post describing all the features of this wedding website](https://blog.rampatra.com/wedding-website) and how to
-customize each of them according to your needs.
+## How it works
 
-# About Me
-Hello, my name is Ram. I am a Director of Software Engineering at [Mastercard](https://www.mastercard.com/). I enjoy making teeny tiny applications in
-my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing the project. Hope you like it!
+The original author wrote a great
+[blog post describing all the features of the base wedding website](https://blog.rampatra.com/wedding-website)
+and how to customize each of them (RSVP, Google Sheet, map, calendar, etc.). It
+remains the best reference for the underlying mechanics.
 
-# Sponsors
-Proudly sponsored by these awesome apps. Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://x.com/rampatra_)]
+---
 
-<table>
-    <tr>
-        <td>
-            <a href="https://presentifyapp.com/" target="_blank"><img src="https://raw.githubusercontent.com/rampatra/assets/refs/heads/main/Presentify/Icons/icon_512.png" width="150" height="150"></a>
-        </td>
-        <td>
-            <a href="https://facescreenapp.com/" target="_blank"><img src="https://github.com/user-attachments/assets/b251b413-ccc4-48f1-a316-c2c2a71f959e" width="150" height="150"></a>
-        </td>
-        <td>
-            <a href="https://keyscreenapp.com" target="_blank"><img src="https://github.com/user-attachments/assets/4b75a739-b4b5-432c-a03c-a9bdd8309934" width="150" height="150"></a>
-        </td>
-        <td>
-            <a href="https://todobarapp.com/" target="_blank"><img src="https://todobarapp.com/assets/img/todobar/app-icon-512.png" width="150" height="150"></a>
-        </td>
-        <td>
-            <a href="https://simplefillapp.com/" target="_blank"><img src="https://github.com/user-attachments/assets/6c575d9c-b65b-4ce7-a468-30f74cfedf18" width="150" height="150"></a>
-        </td>
-    </tr>
-</table>
+## Credits
 
-# Contribute
-First, a big thank you 🙏🏻 for the overwhelming response on [Hacker News](https://news.ycombinator.com/item?id=18556787) and [Reddit](https://www.reddit.com/r/opensource/comments/a1bx4h/i_am_open_sourcing_my_wedding_website_on_my_first/). If you'd like to contribute to the project, feel free to create a [PR](https://help.github.com/articles/about-pull-requests/). To support my work, you can buy one of the apps listed under the "Sponsors" section or click the button below.
+- **Original project:** [wedding-website](https://github.com/rampatra/wedding-website)
+  by [Ram Patra (@rampatra)](https://github.com/rampatra) — the foundation this
+  site is built on. Thank you! 🙏
+- **This customization:** Valentina & Adrián, for our wedding in Bogotá.
 
-<a href="https://www.buymeacoffee.com/rampatra" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+## License
 
-_P.S. For any queries or concerns, you can reach out to me on [Twitter](https://twitter.com/rampatra_). I'll try my best to help._
+This project is licensed under the **GNU General Public License v3.0**, the same
+license as the original project. See the [LICENSE](./LICENSE) file for details.
