@@ -35,6 +35,14 @@ COPY docker/default.conf.template /etc/nginx/templates/default.conf.template
 # Copy the built static site from the build stage
 COPY --from=build /site /usr/share/nginx/html
 
+# Ensure the served files are world-readable and directories are traversable.
+# nginx worker processes drop privileges to the unprivileged "nginx" user, so
+# they must be able to read every file. Some hosts (e.g. certain NAS Docker
+# engines) apply a restrictive umask to COPY layers, which can strip the read
+# bit and cause "open() ... failed (13: Permission denied)" at runtime.
+# chmod sets the bits explicitly regardless of the host umask.
+RUN chmod -R a+rX /usr/share/nginx/html
+
 # Documents the default port (actual port is controlled by the PORT env var)
 EXPOSE 8080
 
