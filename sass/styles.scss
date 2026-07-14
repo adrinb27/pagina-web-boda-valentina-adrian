@@ -251,13 +251,25 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 750px;
-  background: url('../img/fotos/2.%20Ilustraciones%20Web/Principal_Web_.jpg') center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   position: relative;
+  width: 100%;
+  // Reserve space for the fixed navigation bar so the artwork (which has the
+  // couple's names baked into its top) is never hidden behind the nav.
+  padding-top: 130px;
+  // Show the ENTIRE illustration so the "Valentina + Adrian" title is never
+  // cropped at any width. The art is line-art on a white field, so any white
+  // letterbox on very wide screens is invisible.
+  background: #fff url('../img/fotos/2.%20Ilustraciones%20Web/Principal_Web_.jpg') center top no-repeat;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-origin: content-box;
+  // Hug the image's 3:2 aspect ratio (no large empty gaps) while capping the
+  // height on wide/tall screens and keeping a sensible minimum on small ones.
+  aspect-ratio: 3 / 2;
+  min-height: 360px;
+  max-height: 92vh;
 
   /*.rsvp-btn {
     position: absolute;
@@ -288,6 +300,7 @@ Hero
 .navigation {
   transition: all 300ms ease-in-out;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 999;
 }

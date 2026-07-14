@@ -6,9 +6,10 @@ services:
     image: pagina-boda-valadri
     container_name: pagina-boda-valadri
     # HOST_PORT = port on your machine, PORT = port inside the container.
-    # Both default to 8080 and can be overridden via the environment or a .env file.
+    # Host port 8026 is mapped to container port 8026 (nginx listens on PORT).
+    # Pinning the host side keeps the address stable across restarts/redeploys.
     ports:
-      - "8087"
+      - "8026:8026"
     environment:
-      - PORT=8087
+      - PORT=8026
     restart: always
