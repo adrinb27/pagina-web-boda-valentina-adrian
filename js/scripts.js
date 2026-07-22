@@ -53,7 +53,7 @@ var EN_DICT = {
     "rsvpm.h": "Thank You So Much",
     "rsvpm.p": "We're so excited that you'll be joining us.",
     "rsvp.h": "CONFIRM YOUR ATTENDANCE",
-    "rsvp.p": "Please confirm attendance before the 1st of December, 2026. Fill in the below to ensure you can enjoy our celebration to it's fullest!",
+    "rsvp.p": "We'd appreciate it if you could confirm before December 1st, 2026. Add all the details so you can enjoy the event to the fullest!",
     "rsvp.ph.email": "Your email",
     "rsvp.ph.nombre": "Your full name",
     "rsvp.ph.codigo": "Invitation code (see your invitation)",
