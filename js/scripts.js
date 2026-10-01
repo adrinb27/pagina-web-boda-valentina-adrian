@@ -46,7 +46,7 @@ var EN_DICT = {
     "video.p": "2600 Meters Closer to the Stars",
     "map.h": "How do I get to the venue?",
     "map.soon": "Valle Arriba Centro de Eventos",
-    "map.altitude": "We recommend arriving well in advance due to the venue's high altitude so your body can properly acclimate.",
+    "map.altitude": "The wedding venue is at 3000mtrs, so we recommend arriving to Bogota one day in advance to acclimatize properly.",
     "map.confirm": "Important",
     "map.contact": "Contact",
     "map.viewmap": "View Map",
